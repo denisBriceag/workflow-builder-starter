@@ -36,7 +36,15 @@ const PLUGINS_MARKER_REGEX =
   /<!-- PLUGINS:START[^>]*-->[\s\S]*?<!-- PLUGINS:END -->/;
 
 // System integrations that don't have plugins (built-in actions)
-const SYSTEM_INTEGRATION_TYPES = ["database"] as const;
+// Must match types in lib/db/schema.ts integrations table
+const SYSTEM_INTEGRATION_TYPES = [
+  "ai-gateway",
+  "database",
+  "firecrawl",
+  "linear",
+  "resend",
+  "slack",
+] as const;
 
 // Regex patterns for codegen template generation
 const LEADING_WHITESPACE_PATTERN = /^\s*/;

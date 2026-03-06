@@ -62,6 +62,12 @@ export async function POST(
       case "database":
         result = await testDatabaseConnection(integration.config.url);
         break;
+      case "firecrawl":
+        result = {
+          status: "error",
+          message: "Connection test not available for Firecrawl",
+        };
+        break;
       default:
         return NextResponse.json(
           { error: "Invalid integration type" },
